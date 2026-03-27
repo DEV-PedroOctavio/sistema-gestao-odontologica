@@ -1,4 +1,4 @@
-<img width="825" height="1065" alt="image" src="https://github.com/user-attachments/assets/9695affe-fdf1-4848-aa6f-8ffb4df05c9c" /># Sistema de Gestão Odontológica
+# Sistema de Gestão Odontológica
 
 ## Contextualização
 Criamos este repositório para apresentar nossa proposta de banco de dados para uma clínica dentária. Nosso foco foi a praticidade: montamos uma estrutura que liga pacientes, dentistas e consultas de forma inteligente.
