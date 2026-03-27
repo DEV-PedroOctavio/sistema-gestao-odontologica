@@ -1,6 +1,12 @@
 # Sistema de Gestão Odontológica
-#Nomes dos alunos Participantes: 
 
+## Alunos
+- Breno França
+- Bruno Vitor
+- Caio Vinicius
+- Carlos Eduardo
+- Matheus Lahr
+- Pedro Octávio
 
 
 ## Contextualização
