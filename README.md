@@ -47,7 +47,6 @@ Clique abaixo para expandir o script completo de criação e consultas.
 <summary><b>📂 Visualizar Script SQL</b></summary>
 
 ```sql
--- COLE AQUI TODO O TEXTO DO SEU ARQUIVO ODONTO_GP6.SQL
 CREATE DATABASE Odonto;
 CREATE SCHEMA sistema;
 SET search_path TO sistema;
@@ -217,10 +216,12 @@ INSERT INTO CONSULTA (id_paciente, id_dentista, data_hora, descricao_conteudo, p
 (7, 12, '2026-03-29 13:00:00', 'Prova da coroa de porcelana pura. Cor e adaptação aprovadas pela paciente. Retorna para cimentação.', NULL),
 (13, 1, '2026-03-30 15:00:00', 'Queixa de sensibilidade extrema ao frio. Diagnosticada retração gengival no dente 14.', 'Usar creme dental específico para dentes sensíveis.'),
 (14, 8, '2026-04-01 09:30:00', 'Manutenção mensal do aparelho fixo. Troca do fio ortodôntico e dos elásticos.', NULL),
-(13, 1, '2026-04-02 14:00:00', 'Raspagem periodontal profunda sob anestesia na arcada inferior.', 'Paracetamol 750mg se houver dor. Evitar alimentos duros hoje.');
+(13, 1, '2026-04-02 14:00:00', 'Raspagem periodontal profunda sob anestesia na arcada inferior.', 'Paracetamol 750mg se houver dor. Evitar alimentos duros hoje.'),
+(3, 1, '2026-02-21 10:45:00', 'Avaliação inicial para instalação de aparelho ortodôntico. Solicitada documentação.', NULL),
+(13, 1, '2026-02-24 10:30:00', 'Avaliação inicial para instalação de aparelho ortodôntico. Solicitada documentação.', NULL);
 
 INSERT INTO PACIENTE_ENDERECO (id_paciente, id_endereco) VALUES
-(1, 1), (1,2)(2, 10), (3, 2), (4, 3), (5, 4), (6, 5), (7, 6), (8, 7), (9, 8), 
+(1, 1), (1,2), (2, 10), (3, 2), (4, 3), (5, 4), (6, 5), (7, 6), (8, 7), (9, 8), 
 (10, 9), (11, 10), (12, 11), (13, 12), (14, 13), (14, 15), (15, 14); 
 
 INSERT INTO HORARIO_ATENDIMENTO (id_dentista, horario) VALUES
@@ -309,12 +310,13 @@ group by sd.id_dentista
 order by total_consulta desc;
 
 -- CONSULTA 03
-select p.id_paciente,p.nome_paciente, count(p.id_paciente) as quantidade
-from sistema.paciente p
-join sistema.consulta c
-	on p.id_paciente = c.id_paciente
-group by p.id_paciente
-order by quantidade desc;
+SELECT p.id_paciente, p.nome_paciente, count(id_consulta) qtd
+from paciente p
+LEFT JOIN consulta c
+ON p.id_paciente = c.id_paciente
+GROUP BY p.id_paciente
+ORDER BY qtd desc;
+
 
 -- CONSULTA 04
 create view view_consultas_ordenadas as
@@ -336,15 +338,16 @@ group by
     c.data_hora
 order by 
     data_consulta desc;
+
+SELECT * FROM view_consultas_ordenadas;
 	
 -- CONSULTA 05
 
-SELECT avg(qtd) AS media_consultas_por_dentista
-FROM (
+SELECT Round(avg(qtd), 2) AS media_de_consultas_por_dentista
+FROM(
 	SELECT count(c.id_dentista) qtd
 	FROM dentista d
 	LEFT JOIN consulta c
 	ON d.id_dentista = c.id_dentista
 	GROUP BY d.id_dentista
-	ORDER BY d.id_dentista
-);
+	ORDER BY d.id_dentista);
