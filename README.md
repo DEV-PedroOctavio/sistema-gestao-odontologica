@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🦷 Sistema de Gestão Odontológica</h1>
+  <h1>🦷 Sistema de Gestão Odontológica 🦷</h1>
   <p><i>Solução inteligente para modernização de clínicas dentárias</i></p>
 
   ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
