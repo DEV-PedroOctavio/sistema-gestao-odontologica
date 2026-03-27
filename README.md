@@ -1,6 +1,6 @@
 # Sistema de Gestão Odontológica
 
-## Alunos
+## 👥 Equipe
 - Breno França
 - Bruno Vitor
 - Caio Vinicius
@@ -8,30 +8,31 @@
 - Matheus Lahr
 - Pedro Octávio
 
-
-## Contextualização
+## 📝 Contextualização
 Criamos este repositório para apresentar nossa proposta de banco de dados para uma clínica dentária. Nosso foco foi a praticidade: montamos uma estrutura que liga pacientes, dentistas e consultas de forma inteligente.
 
 ---
 
-## Modelo Conceitual
+## 📊 Modelagem do Sistema
+
+### Modelo Conceitual
 ![Modelo Conceitual](Modelo%20conceitual.png)
+
+### Modelo Lógico
+![Modelo Lógico](Modelo%20logico.png)
+
 ---
 
-## Modelo Lógico
-![Modelo Logico](Modelo%20logico.png)
----
-
-## Script SQL Completo
-Abaixo está o script completo utilizado para a criação do banco, inserção de dados de teste, atualizações, deleções e as consultas (queries) requeridas pelo projeto.
+## 💻 Script SQL
+<details>
+  <summary>▶ Clique aqui para expandir o código SQL completo</summary>
 
 ```sql
--- CREATE DATABASE Odonto;
--- CREATE SCHEMA sistema;
--- SET search_path TO sistema;
+CREATE DATABASE Odonto;
+CREATE SCHEMA sistema;
+SET search_path TO sistema;
 
 -------------------------------- CRIAÇÃO DAS TABELAS E CONEXÕES --------------------------------
-
 CREATE TABLE PACIENTE 
 ( 
  id_paciente SERIAL PRIMARY KEY,
@@ -55,17 +56,17 @@ CREATE TABLE PROCEDIMENTO
 ( 
  duracao VARCHAR(100) NOT NULL,  
  descricao TEXT NOT NULL,  
- nome_procedimento VARCHAR (100) NOT NULL,  
+ nome_procedimento VARCHAR(100) NOT NULL,  
  id_procedimento SERIAL PRIMARY KEY 
 ); 
 
 CREATE TABLE ENDERECO 
 ( 
- complemento VARCHAR(100),    
- logradouro VARCHAR(100) NOT NULL,  
- cidade VARCHAR(100) NOT NULL,  
+ logradouro VARCHAR(100) NOT NULL,
+ numero INT NOT NULL,
+ cidade VARCHAR(100) NOT NULL,
+ complemento VARCHAR(100),     
  cep VARCHAR (100) NOT NULL,  
- numero INT NOT NULL,  
  id_endereco SERIAL PRIMARY KEY  
 ); 
 
@@ -81,9 +82,9 @@ CREATE TABLE CONSULTA
 ( 
  id_consulta SERIAL PRIMARY KEY,   
  id_paciente INT NOT NULL,
+ id_dentista INT NOT NULL,  
  descricao_conteudo TEXT NOT NULL,  
  prescricao TEXT,
- id_dentista INT NOT NULL,  
  data_hora TIMESTAMP NOT NULL
 );
 ALTER TABLE CONSULTA ADD FOREIGN KEY(id_paciente) REFERENCES PACIENTE (id_paciente);
@@ -225,6 +226,16 @@ INSERT INTO CONSULTA_PROCEDIMENTO (id_procedimento, id_consulta) VALUES
 (10, 11), (15, 11), (11, 12), (4, 13), (12, 14), (13, 15), (14, 15); 
 
 -------------------------------- Requisitos não Funcionais --------------------------------
+-- Index
+CREATE INDEX idx_dentista
+ON dentista(id_dentista);
+
+CREATE INDEX idx_paciente
+ON paciente(id_paciente);
+
+CREATE INDEX idx_paciente_endereco
+ON paciente_endereco(id_paciente, id_endereco);
+
 -- Update
 
 UPDATE SISTEMA.ENDERECO SET 
@@ -250,7 +261,6 @@ delete from sistema.horario_atendimento
 where id_dentista = 2;
 select * from sistema.horario_atendimento;
 --No dia 30/03/2026, o dentista de id_dentista = 2 não pode comparecer a consulta e solicitou o cancelamento.
---Para que o sistema não contabilize a hora trabalhada, foi deletado esse horário do sistema.
 
 delete from sistema.procedimento
 where id_procedimento = 5;
