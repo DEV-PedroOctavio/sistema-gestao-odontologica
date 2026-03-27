@@ -1,31 +1,40 @@
-# Sistema de Gestão Odontológica
+# 🦷 Sistema de Gestão Odontológica
 
-## 👥 Equipe
-- Breno França
-- Bruno Vitor
-- Caio Vinicius
-- Carlos Eduardo
-- Matheus Lahr
-- Pedro Octávio
+---
+
+## 👥 Equipe de Desenvolvedores
+| Nome |
+| :--- |
+| Breno França |
+| Bruno Vitor |
+| Caio Vinicius |
+| Carlos Eduardo |
+| Matheus Lahr |
+| Pedro Octávio |
+
+---
 
 ## 📝 Contextualização
-Criamos este repositório para apresentar nossa proposta de banco de dados para uma clínica dentária. Nosso foco foi a praticidade: montamos uma estrutura que liga pacientes, dentistas e consultas de forma inteligente.
+> Criamos este repositório para apresentar nossa proposta de banco de dados para uma clínica dentária. Nosso foco foi a praticidade: montamos uma estrutura que liga pacientes, dentistas e consultas de forma inteligente.
 
 ---
 
 ## 📊 Modelagem do Sistema
 
-### Modelo Conceitual
+### 🔹 Modelo Conceitual
 ![Modelo Conceitual](Modelo%20conceitual.png)
 
-### Modelo Lógico
+### 🔹 Modelo Lógico
 ![Modelo Lógico](Modelo%20logico.png)
 
 ---
 
-## 💻 Script SQL
+## 💻 Implementação Técnica (SQL)
+
+Clique na seta abaixo para visualizar o script completo de criação e manipulação do banco de dados.
+
 <details>
-  <summary>▶ Clique aqui para expandir o código SQL completo</summary>
+<summary><b>📂 Ver Script SQL Completo</b></summary>
 
 ```sql
 CREATE DATABASE Odonto;
