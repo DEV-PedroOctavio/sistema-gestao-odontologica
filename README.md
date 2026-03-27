@@ -30,12 +30,12 @@
 
 #### 📌 Modelo Conceitual
 <div align="center">
-  <img src="Modelo%20conceitual.png" alt="Modelo Conceitual" width="800">
+  <img src="modelo_conceitual.png" alt="Modelo Conceitual" width="800">
 </div>
 
 #### 📌 Modelo Lógico
 <div align="center">
-  <img src="Modelo%20logico.png" alt="Modelo Logico" width="800">
+  <img src="modelo_logico.png" alt="Modelo Logico" width="800">
 </div>
 
 ---
