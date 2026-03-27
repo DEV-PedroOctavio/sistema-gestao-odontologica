@@ -12,7 +12,7 @@
 ### 👥 Equipe de Desenvolvimento
 <div align="center">
 
-| 👨‍💻 Membro | 👨‍💻 Membro | 👨‍💻 Membro |
+| 👨‍💻 Membros | 👨‍💻 Membros | 👨‍💻 Membros |
 | :--- | :--- | :--- |
 | **Breno França** | **Bruno Vitor** | **Caio Vinicius** |
 | **Carlos Eduardo** | **Matheus Lahr** | **Pedro Octávio** |
