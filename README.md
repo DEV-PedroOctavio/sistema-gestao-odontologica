@@ -1,10 +1,10 @@
 <div align="center">
-  <h1>🦷 Sistema de Gestão Odontológica 🦷</h1>
-  <p><i>Solução inteligente para modernização de clínicas dentárias</i></p>
+  <h1>🦷 Sistema de Gestão Odontológica</h1>
+  <p><i>Solução robusta para modernização de clínicas dentárias</i></p>
 
   ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
   ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
-  ![Status](https://img.shields.io/badge/Status-Finalizado-green?style=for-the-badge)
+  ![Serratec](https://img.shields.io/badge/Serratec-2026-blue?style=for-the-badge)
 </div>
 
 ---
@@ -12,7 +12,7 @@
 ### 👥 Equipe de Desenvolvimento
 <div align="center">
 
-| 👨‍💻 Membros | 👨‍💻 Membros | 👨‍💻 Membros |
+| Membro | Membro | Membro |
 | :--- | :--- | :--- |
 | **Breno França** | **Bruno Vitor** | **Caio Vinicius** |
 | **Carlos Eduardo** | **Matheus Lahr** | **Pedro Octávio** |
@@ -26,18 +26,14 @@
 
 ---
 
-### 📊 Modelagem do Banco de Dados
+### 📊 Modelagem do Sistema
 
 #### 📌 Modelo Conceitual
-Abaixo, a representação de alto nível das entidades e seus relacionamentos.
-
 <div align="center">
   <img src="Modelo%20conceitual.png" alt="Modelo Conceitual" width="800">
 </div>
 
 #### 📌 Modelo Lógico
-Detalhamento das tabelas, chaves primárias e estrangeiras.
-
 <div align="center">
   <img src="Modelo%20logico.png" alt="Modelo Logico" width="800">
 </div>
@@ -45,13 +41,13 @@ Detalhamento das tabelas, chaves primárias e estrangeiras.
 ---
 
 ### 💻 Implementação Técnica (SQL)
-
-O script abaixo contém toda a inteligência do banco, desde a criação das tabelas até as consultas de relatórios.
+Clique abaixo para expandir o script completo de criação e consultas.
 
 <details>
-<summary><b>📂 EXPANDIR SCRIPT SQL COMPLETO</b></summary>
+<summary><b>📂 Visualizar Script SQL</b></summary>
 
 ```sql
+-- COLE AQUI TODO O TEXTO DO SEU ARQUIVO ODONTO_GP6.SQL
 CREATE DATABASE Odonto;
 CREATE SCHEMA sistema;
 SET search_path TO sistema;
